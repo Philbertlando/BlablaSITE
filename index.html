@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lesona Python, HTML, JAVA, CSS </title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+    background: #071727;
+}
+
+h1 {
+    color: blue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2 {
+    color: #e41d1d;
+}
+h3 {
+    color: aqua;
+}
+h4 {
+    color: blue;
+}
+
+p {
+    color: #272822;
+}
+
+
+button {
+    padding: 10px 18px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    background: #777;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #555;
+}
+
+button.active {
+    background: #1e88e5;
+    transform: scale(1.15);
+}
+
+/* CONTENU PRINCIPAL */
+.contenu {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* SUB CONTENU LESONA 4 */
+.subcontenu {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background: #eef2f7;
+    border-radius: 8px;
+}
+
+/* SHOW */
+.show {
+    display: block;
+}
+
+/* CODE STYLE */
+pre {
+    text-align: left;
+    background: #272822;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+</style>
+</head>
+
+<body>
+
+<h1>📘 Lesona Python, HTML, JAVA,CSS sy Téchnique MAHOMBY</h1>
+
+<!-----Menu-->
+<button onclick="showContent(event, 'c1')">Lesona 1</button>
+<button onclick="showContent(event, 'c2')">Lesona 2</button>
+<button onclick="showContent(event, 'c3')">Lesona 3</button>
+<button onclick="showContent(event, 'c4')">Lesona 4</button>
+
+<div id="c1" class="contenu">
+    <h2>Lesona 1</h2>
+    <p>Variable Python</p>
+
+<pre>
+n = int(input("Entrez un nombre : "))
+</pre>
+
+    <p>Types: int, float, str</p>
+<pre>
+    int = entier
+    float = réel
+    str = chaine de caractère
+</pre>
+<h2>Ny zavatra tokony ho fantatra PythonMATHEMATIQUE : </h2>
+<pre>
+i = 1
+nbrs = []
+while i > 0 :
+    n = int(input(f"entrez le nombre {i} : "))
+    i += 1
+    if i == 4 :
+        break
+    nbrs.append(n)
+s = sum(nbrs)
+m = s / len(nbrs)
+print(f"Alors la moyenne des nombres entrannts est {m}")
+
+
+FANAZAVANA tiako tongavana : 
+            sum            = midika hoe SOMME ny zavatra rehetra ao anatiny liste "nbrs"
+            len(nbrs)      = midika hoe isan'ny isa rehetra tafiditra ao anatiny liste "nbrs"
+            nbrs.append(n) = midika hoe tout les nombres entrés par l'utilisateur sont stockés dans la liste"nbrs"
+</pre>
+<h3>OPERATEURS: </h3>
+<h4>a) Operateurs Arithmetique</h4>
+<pre>
+    +, -, *, /, %, //, **, 
+
+    ** : midika hoe exposant 
+    // : midika hoe division entière
+    % : modulo ampiasaina aminy mitady reste de division.
+</pre>
+<h4>b) Operateurs de comparaison :</h4>
+<pre>
+    >, >=, <, <=, ==, !=, <>
+     Fanazavana kely :
+                    <> : midika hoe different de ...
+
+</pre>
+<h4>c) Operateurs logiques</h4>
+<pre>
+    ET, OU, NON,(pseudo code); and, or, .....(code Python)
+
+</pre>
+<h4>d) Operateurs d'affectation : </h4>
+
+<pre>
+    Exemple directe : 
+                    += : midka hoe miantomboka avy ambany miakatra (ex: 1,2,3,4,5,6,7)(n ← n+1 : pseudo code)
+                    -= : midika hoe miantomboka avy ambony midina(ex: 7,6,5,4,3,2,1)(n ← n-1 : pseudo code)
+                    = : affectation mitovy aminy "←"(pseudo code)
+
+
+</pre>
+<h4>e) Operateurs d'incrementation : </h4>
+
+<pre>
+    ++ et --
+</pre>
+
+</div>
+
+<!-- LESONA 2 -->
+<div id="c2" class="contenu">
+    <h2>Lesona 2</h2>
+    <p>Conditions</p>
+
+<pre>
+n = int(input("Entrez ce nombre : "))
+if n == 0:
+    print("nul")
+elif n > 0:
+    print("positif")
+else:
+    print("negatif")
+
+
+    FANAZAVA KELY : 
+                    if : Si(pseudo code)
+                    elif : SinonSi(pseudo code)
+                    else : Sino(pseudo code)
+
+                    print : Ecrire (pseudo code)
+                    int(input) : Lire(pseudo code) nombre entier
+
+NB : Aza adino ny identation(Tab)
+</pre>
+</div>
+
+<!-- LESONA 3 -->
+<div id="c3" class="contenu">
+    <h2>Lesona 3</h2>
+    <h3>Liste sy boucle</h3>
+
+<pre>
+nombres = [1,2,3]
+
+for n in nombres:
+    print(n)
+
+
+midika hoe : mi-afficher 1
+                         2
+                         3
+
+————————–—————––———————————————————————————————————————––––————————––———–——————
+options = ["Pierre", "Papier", "Ciseaux"]
+import random
+pc = random.choice(options)
+
+misafidy au hasard ny pc ao anatiny liste(options)
+</pre>
+<h3>Fitadiavana RANG aminy nombre :</h3>
+<pre>
+i = 1
+num = []
+while i <= 10 : 
+    n = int(input(f"Entrez le nombre {i} : "))
+    num.append(n)
+    i += 1
+max1 = max(num)
+num.remove(max1)
+max2 = max(num)
+print(f"Alors le plus grand nombre est {max1} et le deuxième est {max2}")
+
+Fanazavana : 
+            max1 = max(num)  = midika hoe malaka valeur plus grand amin'izay rehetra tafiditra ao anatiny liste(num)
+            num.remove(max1) = midika hoe esorina ao anatiny liste io max1 io
+            max2 = max(num)  = midika hoe miverina malaka le plus grand indray rehefa hafaka ao ny max1
+
+
+</pre>
+
+<pre>
+i = 1
+print("Misy prix d'une bicyclette eo anelanelan'ny 100000ar hatraminy 1000000ar")
+
+import random
+n = random.randint(100000,1000000)
+while i > 0 : 
+    user = int(input("Deviner ce prix : "))
+    if user == n :
+        print("Correct")
+        break
+    elif user > n :
+        print("tsy marina, Lafo loatra! ")
+        n += 1
+    elif user < n :
+        print("Diso Mora loatra!")
+
+
+FANAZAVA FANAMPINY : 
+    Izy io dia misy module hoe "random"izay misy fonction maromaro hafaka ampiasaina ao anatiny.
+    exemple(randint midika hoe malaka valeur aléatoire anivon'ny nombre) 
+    et (choice misafidy au hasard ao aminy liste)
+</pre>
+</div>
+
+<!-----Lesona 4-->>
+
+
+
+<div id="c4" class="contenu">
+
+    <h2>Lesona 4 - Web</h2>
+
+    <button onclick="showContent(event, 'e1')">Bouton JS</button>
+    <button onclick="showContent(event, 'e2')">HTML</button>
+    <button onclick="showContent(event, 'e3')">CSS</button>
+    <button onclick="showContent(event, 'e4')">Info</button>
+
+    <div id="e1" class="subcontenu">
+        <h2>Fampianarana Boutton JAVA</h2>
+
+<pre>
+&lt;button onclick="showContent(event, 'e1')"&gt;
+Click me
+&lt;/button&gt;
+
+Click me = io ny zavatra hita rehefa hanindry azy
+
+mila mametraka koa ny : 
+&lt;div id="e1" class="subcontenu"&gt; 
+
+Rehefa boutons ao anatiny bouton ARy koa raha bouton tsotra dia : subcontenu miova contenu fotsiny
+
+ity misy FANAMPINY rehefa manisy marque ny efa voatsindry na mbola tsia(TENA ZAVA-DEHIBE) : 
+
+button:hover {               = midika hoe bouton mbola tsy voatsindry
+    background: yellow;      = midika hoe misy couleur jaune rehefa mbola tsy voatsindry 
+}
+
+button.active {              = midika hoe bouton rehefa voatsindry dia miseho ny rehetra ambany ireo
+    background: bleu;        = midika hoe manisy marque bleu ny voatsindry
+    transform: scale(1.15);  = midika hoe raha tsindrina dia miha be 1.15
+}
+
+</pre>
+    </div>
+
+    <div id="e2" class="subcontenu">
+        <h2>HTML</h2>
+        <p>Structure page web</p>
+    </div>
+
+    <div id="e3" class="subcontenu">
+        <h2>CSS</h2>
+        <p>Design / couleur / style</p>
+    </div>
+
+    <div id="e4" class="subcontenu">
+        <h2>TSARA HO FANTATRA</h2>
+        <p>HTML + CSS + JS = site web complet</p>
+    </div>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+function showContent(event, id) {
+
+    var contenus = document.getElementsByClassName("contenu");
+    var sub = document.getElementsByClassName("subcontenu");
+    var buttons = document.getElementsByTagName("button");
+
+    // MAIN LESONA
+    if (id.startsWith("c")) {
+        for (var i = 0; i < contenus.length; i++) {
+            contenus[i].classList.remove("show");
+        }
+        for (var i = 0; i < sub.length; i++) {
+            sub[i].classList.remove("show");
+        }
+    }
+
+    // SUB LESONA 4
+    if (id.startsWith("e")) {
+        for (var i = 0; i < sub.length; i++) {
+            sub[i].classList.remove("show");
+        }
+    }
+
+    // bouton active reset
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+    }
+
+    // show target
+    document.getElementById(id).classList.add("show");
+
+    // active button
+    event.target.classList.add("active");
+}
+</script>
+
+</body>
+</html>
