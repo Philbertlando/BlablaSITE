@@ -2,21 +2,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Lesona Python, HTML, JAVA, CSS </title>
+<title>Multiplayer Quiz Pro</title>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    text-align: center;
-    background: #071727;
-}
 
-h1 {
-    font-size: 40px;
-    color: blue;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
+
 
 h2 {
     font-size: 20px;
@@ -121,8 +111,140 @@ pre {
     border-radius: 8px;
     overflow-x: auto;
 }
+
+
+
+
+
+
+
+
+
+
+body{
+  background:#1f1c2c;
+  color:rgb(30, 8, 128);
+  font-family:Arial;
+  text-align:center;
+}
+
+h1{margin-top:10px;}
+
+input,button{
+  padding:10px;
+  margin:5px;
+}
+
+#question{
+  font-size:32px;
+  margin:20px;
+}
+
+.playerBox{
+  background:#00000050;
+  margin:10px auto;
+  padding:10px;
+  width:350px;
+  border-radius:10px;
+}
+
+.score{
+  color:#00d2ff;
+}
+
+.answerBtn{
+  padding:8px;
+  margin:4px;
+  width:70px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.correct{background:#2ecc71 !important;color:white;}
+.wrong{background:#e74c3c !important;color:white;}
+
+#timer{
+  color:yellow;
+  font-size:20px;
+}
+
+#ranking{
+  margin-top:20px;
+  background:#00000070;
+  padding:10px;
+  width:350px;
+  margin:auto;
+  border-radius:10px;
+}
 </style>
 </head>
+
+<body>
+
+<h1>🧠 Multiplayer Quiz Pro</h1>
+
+<p>➡️ Ampidiro anarana (isaky ny appareil)</p>
+
+<input id="playerName" placeholder="Anaranao eto">
+<button onclick="startGame()">Start</button>
+
+<h2 id="question">Start</h2>
+
+<div id="players"></div>
+
+<p id="timer">Temps: 6s par question</p>
+
+<h2>🏆 Classement</h2>
+<div id="ranking"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <body>
 
@@ -133,6 +255,40 @@ pre {
 <button onclick="showContent(event, 'c2')">Lesona 2</button>
 <button onclick="showContent(event, 'c3')">Lesona 3</button>
 <button onclick="showContent(event, 'c4')">Lesona 4</button>
+<button onclick="showContent(event, 'c5')">Jeux KELY</button>
+
+
+
+
+<!-- ================= GAME ================= -->
+<div id="c5" class="contenu">
+
+<h1>🧠 Calcul Mental Game</h1>
+
+<div id="gameArea">
+
+<h2 id="question">Clique Start</h2>
+
+<div id="choices"></div>
+
+<p id="timer">Temps: 6s</p>
+<p id="scoreGame">Score: 0</p>
+
+<button class="start" onclick="startGame()">▶ Start Competition</button>
+
+</div>
+
+<div id="gameWin">
+🎉 VICTOIRE !!! 🎉
+</div>
+
+</div>
+
+
+
+
+
+
 
 
 
@@ -143,9 +299,7 @@ pre {
 </div>
 
 
-
-
-<div id="c1" class="contenu">
+<div id="c1" class="contenu"></div>
     <h2>Lesona 1</h2>
     <p>Variable Python</p>
 
@@ -379,57 +533,235 @@ button.active {              = midika hoe bouton rehefa voatsindry dia miseho ny
         <p>Design / couleur / style</p>
         <h3>Bouton style :</h3>
          <pre>
-            background:  → lokon’ny fond 
-            color:  → soratra aminy texte 
-            padding:  → elanelana anatiny
-            margin-top/bottom → elanelana ivelany
-         </pre>
+            
+
+            button {
+                font-size: 40px;     = Taille aminy soratra (pixels)
+                padding: 29px 40px;  = Haben'ny cadre aminy bouton
+                margin: 5px;         = elanelana ny bouton aminy zavatra hafa
+                cursor: pointer;     = midika hoe azo tsindrina
+                border: none;        = Esorina ilay sisiny (cadre) default an’ny bouton
+                background: #777;    = Loko ambadika = volondavenona (gris) afaka atao loko hafa(yellow, bleu,black,....)
+                color: white;        = Lokon'ny soratra 
+                border-radius: 10px; = Tsy atao marangitra karaha réctangle ny sisiny (afaka ovaina koa nu pixels)
+                transition: 1.1s;    = animation malefaka rehefa tsindrina izy
+         </pre> 
+
+        <h3>Body style</h3>
+        <pre>
+
+         body {
+            font-family: Arial, sans-serif;   = type amin'ny soratra
+            margin: 20px;                     = elanelana manodidina ny page
+            text-align: center;               = fiantombohan'ny soratra(center, justify,...)
+            background: #071727;              = Couleur afaran'ny soratra
+    </pre>
 
     </div>
 
     <div id="e4" class="subcontenu">
         <h2>TSARA HO FANTATRA</h2>
+
         <p>HTML + CSS + JS = site web complet</p>
+
+        <pre>
+            Mifampiankina izy rehetra rehefa hanao site web complete 
+            Ohatra hoe anao animation HTML sy CSS : 
+
+             
+
+CSS animation miankavia : 
+
+@keyframes slideLeft {                : 
+    0% {                              : 
+        transform: translateX(100%);  :
+    }
+    100% {                            :
+        transform: translateX(-100%); :
+    }
+}
+
+HTML mifanaraka aminy : 
+&lt;div class="title-container">
+    &lt;h1 class="animated-title">
+       BONJOUR!
+    &lt;/h1>
+&lt;/div>
+
+        </pre>
+
     </div>
 
 </div>
 
-<!-- SCRIPT -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
-function showContent(event, id) {
 
-    var contenus = document.getElementsByClassName("contenu");
-    var sub = document.getElementsByClassName("subcontenu");
-    var buttons = document.getElementsByTagName("button");
+let players=[];
+let scores={};
+let a,b,op,result;
+let time=10, interval;
+let questionCount=0;
+let answered={};
 
-    // MAIN LESONA
-    if (id.startsWith("c")) {
-        for (var i = 0; i < contenus.length; i++) {
-            contenus[i].classList.remove("show");
-        }
-        for (var i = 0; i < sub.length; i++) {
-            sub[i].classList.remove("show");
-        }
-    }
+/* START */
+function startGame(){
 
-    // SUB LESONA 4
-    if (id.startsWith("e")) {
-        for (var i = 0; i < sub.length; i++) {
-            sub[i].classList.remove("show");
-        }
-    }
+  let name = document.getElementById("playerName").value.trim();
 
-    // bouton active reset
-    for (var i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove("active");
-    }
+  // raha tsy misy anarana dia alaina amin'ny appareil
+  if(!name){
+    name = localStorage.getItem("playerName");
+  }
 
-    // show target
-    document.getElementById(id).classList.add("show");
+  // raha mbola tsy misy mihitsy
+  if(!name){
+    alert("Ampidiro anarana !");
+    return;
+  }
 
-    // active button
-    event.target.classList.add("active");
+  // save per device
+  localStorage.setItem("playerName", name);
+
+  players = [name]; // 🔥 tsirairay appareil = mpilalao 1
+
+  scores[name]=0;
+
+  nextQuestion();
 }
+
+/* QUESTION */
+function nextQuestion(){
+
+  if(questionCount>=15){
+    endGame();
+    return;
+  }
+
+  clearInterval(interval);
+  answered={};
+
+  a=Math.floor(Math.random()*10);
+  b=Math.floor(Math.random()*10);
+  let ops=["+","-","*"];
+  op=ops[Math.floor(Math.random()*3)];
+
+  result=eval(a+op+b);
+
+  document.getElementById("question").innerText=a+" "+op+" "+b;
+
+  let box=document.getElementById("players");
+  box.innerHTML="";
+
+  players.forEach(p=>{
+
+    let div=document.createElement("div");
+    div.className="playerBox";
+
+    div.innerHTML=`
+      <h3>${p}</h3>
+      <p class="score">Score: ${scores[p]}</p>
+    `;
+
+    let options=generateOptions();
+
+    options.forEach(v=>{
+      let btn=document.createElement("button");
+      btn.className="answerBtn";
+      btn.innerText=v;
+
+      btn.onclick=()=>{
+
+        if(answered[p]) return;
+        answered[p]=true;
+
+        if(v==result){
+          scores[p]++;
+          btn.classList.add("correct");
+        }else{
+          btn.classList.add("wrong");
+        }
+
+        updateRanking();
+      };
+
+      div.appendChild(btn);
+    });
+
+    box.appendChild(div);
+  });
+
+  questionCount++;
+  updateRanking();
+  startTimer();
+}
+
+/* OPTIONS */
+function generateOptions(){
+  let arr=[result];
+
+  while(arr.length<4){
+    let fake=result+Math.floor(Math.random()*10-5);
+    if(!arr.includes(fake)) arr.push(fake);
+  }
+
+  return arr.sort(()=>Math.random()-0.5);
+}
+
+/* TIMER */
+function startTimer(){
+  time=6;
+  document.getElementById("timer").innerText="Temps: "+time;
+
+  interval=setInterval(()=>{
+    time--;
+    document.getElementById("timer").innerText="Temps: "+time;
+
+    if(time<=0){
+      nextQuestion();
+    }
+  },1000);
+}
+
+/* RANKING */
+function updateRanking(){
+
+  let sorted=Object.entries(scores)
+    .sort((a,b)=>b[1]-a[1]);
+
+  let html="";
+
+  sorted.forEach((p,i)=>{
+    html+=`${i+1}. ${p[0]} - ${p[1]} pts<br>`;
+  });
+
+  document.getElementById("ranking").innerHTML=html;
+}
+
+/* END GAME */
+function endGame(){
+  clearInterval(interval);
+  document.getElementById("question").innerText="🎉 FIN DU JEU 🎉";
+}
+
 </script>
 
 </body>
