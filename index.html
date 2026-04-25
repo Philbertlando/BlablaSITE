@@ -1,106 +1,20 @@
 <!DOCTYPE html>
-<html lang="mg">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Quiz + Lesona PRO</title>
+<title>Lesona Python, HTML, JAVA, CSS</title>
 
 <style>
 
-
-.animated-title {
-    white-space: nowrap;
-    color: yellow;
-    font-size: 50px;
-    font-weight: bold;
-    animation: slideLeft 30s linear infinite;
-}
-
-
-/* animation miankavia */
-@keyframes slideLeft {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-
-
-
-
-
-
-
-
-
+/* ================= GAME STYLE ================= */
 body {
-    background: #1f1c2c;
-    color: white;
-    font-family: Arial;
-    text-align: center;
-    margin: 0;
+  background: linear-gradient(120deg, #1f1c2c, #928dab);
+  font-family: Arial;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
-
-/* MENU */
-.menu {
-    background: #111;
-    padding: 10px;
-    position: sticky;
-    top: 0;
-}
-
-button {
-    padding: 40px 90px;
-    margin: 5px;
-    cursor: pointer;
-    border: none;
-    border-radius: 6px;
-}
-
-
-button:hover {
-    background: #555;
-}
-
-button.active {
-    background: #1e88e5;
-    transform: scale(1.15);
-}
-
-/* SECTIONS */
-.section {
-    display: none;
-    padding: 20px;
-}
-
-.section.active {
-    display: block;
-}
-
-/* QUIZ */
-.playerBox {
-    background: rgba(255,255,255,0.1);
-    margin: 10px auto;
-    padding: 10px;
-    width: 320px;
-    border-radius: 10px;
-}
-
-.answerBtn {
-    margin: 5px;
-    padding: 8px;
-}
-
-.correct { background: green; }
-.wrong { background: red; }
-
-#ranking {
-    color: yellow;
-    margin-top: 10px;
-}
-
 pre {
     font-size: 35px;
     text-align: left;
@@ -109,81 +23,211 @@ pre {
     padding: 10px;
     border-radius: 8px;
     overflow-x: auto;
+
 }
 
-h3 {
-    color: blue;
-    font-size: 30px;
+h2 {
+  color: #e74c3c;
+  font-size: 35 px;
+  text-align: center;
+  
 }
 
-h4 {
-    color: red;
-    font-size: 25px;
+
+.animated-title {
+    white-space: nowrap;
+    color: rgb(38, 9, 224);
+    font-size: 50px;
+    font-weight: bold;
+    animation: slideLeft 20s linear infinite;
+}
+/* animation miankavia */
+@keyframes slideLeft {
+    0% {
+        transform: translateX(50%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
 }
 
+h1 {
+  color: yellow;
+  font-size: 50px;
+}
 p {
-    color: aqua;
-    font-size: 25px;
+  color: #16a085;
+  font-size: 30px;
+}
+h3 {
+  color: #53b608;
+}
+h5 {
+  color: #22221e;
+  font-size: 30px;
+  background: white;
 }
 
+
+
+
+/* MENU BUTTON */
+button {
+  font-size: 45px;
+  padding:  20px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  background: #777;
+  color: white;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #555;
+}
+
+button.active {
+  background: #1e88e5;
+  transform: scale(1.1);
+}
+
+/* CONTENT */
+.contenu {
+  display: none;
+  padding: 20px;
+}
+
+.show {
+  display: block;
+}
+
+/* ================= GAME ================= */
+#gameArea {
+  margin-top: 50px;
+  padding: 20px;
+}
+
+#question {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#choices button {
+  display: block;
+  margin: 10px auto;
+  padding: 12px 25px;
+  width: 150px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #22221e;
+  transition: 0.3s;
+}
+
+#choices button:hover {
+  transform: scale(1.05);
+}
+
+.correct {
+  background-color: #2ecc71 !important;
+  color: rgb(32, 25, 25);
+}
+
+.wrong {
+  background-color: #e74c3c !important;
+  color: rgb(148, 20, 20);
+}
+
+#timer {
+  font-size: 20px;
+  color: yellow;
+  margin-top: 10px;
+}
+
+#scoreGame {
+  font-size: 20px;
+  color: #00d2ff;
+}
+
+button.start {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #16a085;
+}
+
+/* WIN */
+#gameWin {
+  display: none;
+  font-size: 45px;
+  color: gold;
+  margin-top: 80px;
+  animation: pop 1s infinite alternate;
+}
+
+#gameWin.showWin {
+  display: block;
+}
+
+@keyframes pop {
+  from { transform: scale(1); }
+  to { transform: scale(1.2); }
+}
+
+/* TEXT */
+pre {
+  background: #272822;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  overflow-x: auto;
+}
 
 </style>
 </head>
 
 <body>
 
+<h1>📘 Lesono PYTHON</h1>
+
+<!-- MENU -->
+<button onclick="showContent(event, 'c1')">Lesona 1</button>
+<button onclick="showContent(event, 'c2')">Lesona 2</button>
+<button onclick="showContent(event, 'c3')">Lesona 3</button>
+<button onclick="showContent(event, 'c4')">Lesona 4</button>
+<button onclick="showContent(event, 'c5')">Jeu Calcul</button>
+
+
+
 
 <div class="title-container">
     <h1 class="animated-title">
-       FIANARANA LESONA KELY MIARAKA AMIN’NY PHILBERT LANDO
-    
+       FIFANAMPIANA AMINY LESONA TSOTSOTRA PYTHON_ALGORITHMIQUE 💻 MIARAKA AMIN’NY PHILBERT Lando 🖐🖐📗📗📗
     </h1>
 </div>
 
 
-<h1>🧠 Learning + Quiz System</h1>
 
-<!-- MENU -->
-<div class="menu">
-    <button onclick="show('quiz')">🎮 Quiz</button>
-    <button onclick="show('lesson1')">📘 Lesona 1</button>
-    <button onclick="show('lesson2')">📘 Lesona 2</button>
-</div>
 
-<!-- QUIZ -->
-<div id="quiz" class="section active">
 
-    <h2>Multiplayer Quiz</h2>
 
-    <input id="playerName" placeholder="Anaran'ny joueur">
-    <button onclick="addPlayer()">➕ Add</button>
-    <button onclick="startGame()">▶ Start</button>
-
-    <h2 id="question">Tsindrio Start</h2>
-    <p id="timer">Timer: 0</p>
-
-    <div id="playersArea"></div>
-
-    <h3>🏆 Ranking</h3>
-    <div id="ranking"></div>
-</div>
-
-<!-- LESONA 1 -->
-<div id="lesson1" class="section">
-    <h2>📘 Lesona 1: Python</h2>
-    <p>fampiharana : </p>
+<!----------------------------LESONA 1-->>
+<div id="c1" class="contenu">
+<h2>🔶Tongasoa eto aminy Lesona 1 izay mahakasika ny Variable SY ny OPERATEURS</h2>
+<h3>Déclaration de variabble?</h3>
+<pre>n = int(input("Entrez un nombre : "))<pre>
 
 <pre>
-n = int(input("Entrez un nombre : "))
-</pre>
 
-    <p>type aminy Variable : int, float, str</p>
-<pre>
-    int = entier
-    float = réel
-    str = chaine de caractère
+    int = entier                : nombre tsy misy virgule
+    float = réel                : nombre misy virgule
+    str = chaine de caractère   : exemple Nom, Pénom, text,....
+    list                        : afaka anaovana stockage zavatra maro
 </pre>
-<h2>PythonMATHEMATIQUE </h2>
+<h3>PythonMATHEMATIQUE </h3>
 <pre>
 i = 1
 nbrs = []
@@ -244,11 +288,18 @@ FANAZAVANA tiako tongavana :
 </div>
 
 
-<!-- LESONA 2 -->
-<div id="lesson2" class="section">
-    <h2>📘 Lesona 2: Conditions sy zavatra maro sami-hafa : </h2>
 
-<h3>Condition ALGORITHMIQUE : </h3>
+
+
+
+
+
+
+
+
+<!----------------------------LESONA 2-->
+<div id="c2" class="contenu">
+<h2>🔶Hiantra Momba by condition ALGORITHMIQUE, BOUCLE, RANG🙏🙏</h2>  
 <pre>
 n = int(input("Entrez ce nombre : "))
 if n == 0:
@@ -337,164 +388,237 @@ FANAZAVA FANAMPINY :
 
 
 
+
+
+<div id="c3" class="contenu">
+<h2>🔶Eto indray isika hanao pratique haviatrany🙏🙏</h2>
+<pre>
+c_impairs = 0
+cmpt10 = 0
+cmpt5 = 0
+c_pairs = 0
+i = 0
+n = int(input("entrez ce nombre : ")) 
+while i <= n :
+    print(i, end=" ")
+    if i%2 == 0 :
+        c_pairs += 1
+    else :
+        c_impairs += 1
+    if i %5 == 0 :
+        cmpt5 += 1
+    if i %10 == 0 :
+        cmpt10 += 1
+    i += 1
+print()
+print(f"Alors le nombre pairs est {c_pairs} et le nombre impairs est {c_impairs}.")
+print(f"Alors le nombre multiple de 5 est {cmpt5} et celui de 10 est {cmpt10}.")
+
+</pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="c4" class="contenu">
+<h2>🔶Eto indray isika hianatra mots clés aminy python.🙏🙏</h2>
+<pre>
+    input    = Lire
+    print    = Ecrire
+    break    = Fin
+
+    end=" "  = ampiasaina aminy fanehoana liste ny zavatra mba tsy ho midina andalana ex : 0 1 2 3 4 5 6 7 8 9 10
+    izy eto izao " espace" natao azy
+
+    return  = retourner des valeurs a calculé. ex : 
+                                                    
+nombre = int(input("entrez un nombre : "))
+def carre(nombre) :
+    return nombre * nombre
+resultat = carre(nombre)
+print(f"Le carre de {nombre} est {resultat}")
+
+
+    def     = définition des arguments :
+    Exemple
+    def personne(nom, age)
+    print(f"Bonjour {nom} ") 
+    print(f"vous avez {age} ans")
+def personne1(prenom) :
+    print(f"Bonjour {prenom} et")
+personne1("Eric")
+personne("RAKOTO", 34)
+</pre>
+
+
+
+
+
+
+
+
+
+<h5>
+  Izy ity izany mila fanaovana kotrana mafy vao mahazo vokatra tsara mba ho lasa developper matanjaka 💪💪💪
+  ARY koa ny lesona ato dia sombiny fotsiny fa anjaranao manampy azy!!!!!!!!!!!!!!!!!!!!!!
+</h5>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ================= GAME ================= -->
+<div id="c5" class="contenu">
+
+<h1>🧠 Calcul Mental Game</h1>
+
+<div id="gameArea">
+
+<h2 id="question">Clique Start</h2>
+
+<div id="choices"></div>
+
+<p id="timer">Temps: 6s</p>
+<p id="scoreGame">Score: 0</p>
+
+<button class="start" onclick="startGame()">▶ Start Competition</button>
+
+</div>
+
+<div id="gameWin">
+🎉 VICTOIRE !!! 🎉
+</div>
+
+</div>
+
+<!-- ================= SCRIPT ================= -->
 <script>
 
-/* =======================
-   NAVIGATION FIXED
-======================= */
-function show(id){
-    let sections = document.querySelectorAll(".section");
+function showContent(event, id) {
 
-    sections.forEach(s => s.classList.remove("active"));
+    let contenus = document.getElementsByClassName("contenu");
+    let buttons = document.getElementsByTagName("button");
 
-    document.getElementById(id).classList.add("active");
-}
-
-/* =======================
-   QUIZ SYSTEM
-======================= */
-
-let players = [];
-let scores = {};
-let result;
-let timer;
-let time = 5;
-let answered = false;
-
-/* ADD PLAYER */
-function addPlayer() {
-    let name = document.getElementById("playerName").value.trim();
-    if (!name) return;
-
-    if (!scores[name]) {
-        players.push(name);
-        scores[name] = 0;
-        updatePlayers();
+    for (let i = 0; i < contenus.length; i++) {
+        contenus[i].classList.remove("show");
     }
 
-    document.getElementById("playerName").value = "";
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+    }
+
+    document.getElementById(id).classList.add("show");
+    event.target.classList.add("active");
 }
 
-/* SHOW PLAYERS */
-function updatePlayers() {
-    let area = document.getElementById("playersArea");
-    area.innerHTML = "";
+// ===== GAME =====
+let a, b, op, result;
+let score = 0;
+let questionCount = 0;
+let time = 6;
+let interval;
 
-    players.forEach(p => {
-        let div = document.createElement("div");
-        div.className = "playerBox";
-        div.innerHTML = `<b>${p}</b><br>Score: ${scores[p]}`;
-        area.appendChild(div);
-    });
-
-    updateRanking();
-}
-
-/* START */
 function startGame() {
-    nextQuestion();
+    score = 0;
+    questionCount = 0;
+    document.getElementById("scoreGame").innerText = "Score: 0";
+    document.getElementById("gameWin").classList.remove("showWin");
+    newQuestion();
 }
 
-/* QUESTION */
-function nextQuestion() {
-    answered = false;
+function newQuestion() {
 
-    let a = Math.floor(Math.random()*10);
-    let b = Math.floor(Math.random()*10);
-    let ops = ["+","-","*"];
-    let op = ops[Math.floor(Math.random()*3)];
+    if (questionCount >= 15) {
+        document.getElementById("gameArea").style.display = "none";
+        document.getElementById("gameWin").classList.add("showWin");
+        return;
+    }
 
-    if (op === "+") result = a + b;
-    if (op === "-") result = a - b;
-    if (op === "*") result = a * b;
+    document.getElementById("gameArea").style.display = "block";
 
-    document.getElementById("question").innerText = `${a} ${op} ${b} = ?`;
+    a = Math.floor(Math.random() * 20);
+    b = Math.floor(Math.random() * 20);
 
-    showAnswers();
-    startTimer();
+    let ops = ["+", "-", "*"];
+    op = ops[Math.floor(Math.random() * 3)];
+
+    if (op == "+") result = a + b;
+    if (op == "-") result = a - b;
+    if (op == "*") result = a * b;
+
+    document.getElementById("question").innerText = a + " " + op + " " + b;
+
+    generateChoices();
+
+    time = 6;
+    document.getElementById("timer").innerText = "Temps: 6s";
+
+    clearInterval(interval);
+    interval = setInterval(updateTimer, 1000);
 }
 
-/* ANSWERS */
-function showAnswers() {
-    let area = document.getElementById("playersArea");
-    area.innerHTML = "";
+function generateChoices() {
 
-    players.forEach(p => {
-        let div = document.createElement("div");
-        div.className = "playerBox";
+    let choices = [result];
 
-        div.innerHTML = `<b>${p}</b><br>Score: ${scores[p]}`;
+    while (choices.length < 4) {
+        let fake = result + Math.floor(Math.random() * 10 - 5);
+        if (!choices.includes(fake)) {
+            choices.push(fake);
+        }
+    }
 
-        let options = generateOptions();
+    choices.sort(() => Math.random() - 0.5);
 
-        options.forEach(opt => {
-            let btn = document.createElement("button");
-            btn.className = "answerBtn";
-            btn.innerText = opt;
+    let container = document.getElementById("choices");
+    container.innerHTML = "";
 
-            btn.onclick = () => checkAnswer(p, opt, btn);
+    choices.forEach(val => {
+        let btn = document.createElement("button");
 
-            div.appendChild(btn);
-        });
+        btn.innerText = val;
 
-        area.appendChild(div);
+        btn.onclick = function () {
+
+            if (val == result) {
+                btn.classList.add("correct");
+                score++;
+            } else {
+                btn.classList.add("wrong");
+            }
+
+            document.getElementById("scoreGame").innerText = "Score: " + score;
+
+            setTimeout(() => {
+                questionCount++;
+                newQuestion();
+            }, 500);
+        };
+
+        container.appendChild(btn);
     });
 }
 
-/* OPTIONS */
-function generateOptions() {
-    let opts = [result];
+function updateTimer() {
+    time--;
+    document.getElementById("timer").innerText = "Temps: " + time + "s";
 
-    while (opts.length < 4) {
-        let fake = result + Math.floor(Math.random()*10 - 5);
-        if (!opts.includes(fake)) opts.push(fake);
+    if (time <= 0) {
+        clearInterval(interval);
+        questionCount++;
+        newQuestion();
     }
-
-    return opts.sort(() => Math.random() - 0.5);
-}
-
-/* CHECK ANSWER */
-function checkAnswer(player, value, btn) {
-    if (answered) return;
-    answered = true;
-
-    clearInterval(timer);
-
-    if (value === result) {
-        scores[player]++;
-        btn.classList.add("correct");
-    } else {
-        btn.classList.add("wrong");
-    }
-
-    updatePlayers();
-
-    setTimeout(nextQuestion, 1000);
-}
-
-/* TIMER */
-function startTimer() {
-    time = 5;
-    document.getElementById("timer").innerText = "Timer: " + time;
-
-    timer = setInterval(() => {
-        time--;
-        document.getElementById("timer").innerText = "Timer: " + time;
-
-        if (time <= 0) {
-            clearInterval(timer);
-            nextQuestion();
-        }
-    }, 1000);
-}
-
-/* RANKING */
-function updateRanking() {
-    let sorted = Object.entries(scores)
-        .sort((a,b)=>b[1]-a[1]);
-
-    document.getElementById("ranking").innerHTML =
-        sorted.map((p,i)=>`${i+1}. ${p[0]} - ${p[1]} pts`).join("<br>");
 }
 
 </script>
