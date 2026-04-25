@@ -392,8 +392,27 @@ FANAZAVA FANAMPINY :
 
 <div id="c3" class="contenu">
 <h2>🔶Eto indray isika hanao pratique haviatrany🙏🙏</h2>
+<pre>
+username_correct = "admin"
+password_correct = "1234"
 
+essais = 3
 
+while essais > 0:
+    username = input("Username: ")
+    password = input("Password: ")
+
+    if username == username_correct and password == password_correct:
+        print("Connexion réussie ✅")
+        break
+    else:
+        essais -= 1
+        print("Identifiants incorrects ❌")
+        print("Essais restants:", essais)
+
+if essais == 0:
+    print("Accès bloqué 🚫")
+</pre>
 <pre>
 mot = input("Entrez ce mot : ")
 NV = "aàoueéèyiAOUEYI"
