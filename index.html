@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Lesona Python, HTML, JAVA, CSS</title>
+<title>Lesona Python</title>
 
 <style>
 
@@ -392,6 +392,25 @@ FANAZAVA FANAMPINY :
 
 <div id="c3" class="contenu">
 <h2>🔶Eto indray isika hanao pratique haviatrany🙏🙏</h2>
+
+
+<pre>
+mot = input("Entrez ce mot : ")
+NV = "aàoueéèyiAOUEYI"
+nb_V = 0
+nb_C = 0
+
+for lettre in mot :
+    if lettre.isalpha() :
+
+        if lettre in NV :
+            nb_V += 1
+        else :
+            nb_C += 1
+print(f"Alors le nombre de voyelles est {nb_V} et le nombre des consonnes est {nb_C}  ")
+
+
+</pre>
 <pre>
 c_impairs = 0
 cmpt10 = 0
